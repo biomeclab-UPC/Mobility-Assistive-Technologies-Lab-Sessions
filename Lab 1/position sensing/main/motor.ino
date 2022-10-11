@@ -12,7 +12,7 @@ int adc_out_max_limit; // Value of the analog value of the potentiometer in 90 d
 
 /*
  * Function: CalibratePositionSensor
- *  The user is required to move the EduExo to the position limits and then the values
+ *  The user is asked/required to move the EduExo to the position limits and then the values
  *  read by the analog channel are stored in the variables adc_out_min_limit (int) and
  *  adc_out_max_limit (int).
  *  
