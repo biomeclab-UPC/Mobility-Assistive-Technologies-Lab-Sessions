@@ -1,7 +1,7 @@
 #define MS2S 0.000001f // from microsecond to seconds
 
 //Time measurements
-float time_stamp = 0.0;
+float delta_time = 0.0;
 float current_time = micros();
 float past_time = micros();
 
@@ -16,7 +16,7 @@ void setup() {
 void loop() {
   // Update TimeStamp
   current_time = micros();
-  time_stamp = (current_time - past_time)*MS2S;
+  delta_time = (current_time - past_time)*MS2S;
   past_time = current_time;
 
   // Check User Commands
@@ -28,7 +28,7 @@ void loop() {
     float motor_position = ReadMotorPosition();
 
     // Print data in the serial monitor
-    Serial.print(time_stamp); Serial.print(", ");
+    Serial.print(delta_time); Serial.print(", ");
     Serial.println(motor_position);
   }
 }
